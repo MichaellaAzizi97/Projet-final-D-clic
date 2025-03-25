@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Michaëlla</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #0D0D0D;
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo .nom {
+            color: #fff;
+        }
+
+        .logo .prenom {
+            color: #20C997;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #20C997;
+        }
+
+        #accueil {
+            background-color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .prenom {
+            color: #20C997;
+        }
+
+        .accueil-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 50px;
+        }
+
+        .accueil-text {
+            width: 50%;
+            text-align: center;
+        }
+
+        .accueil-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .accueil-text .subtitle {
+            font-size: 1.5rem;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .accueil-text button {
+            background-color: #20C997;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1rem;
+            margin-top: 30px;
+        }
+
+        .accueil-text button:hover {
+            background-color: #17A589;
+        }
+
+        .image-header img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        #apropos {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 80px 20px;
+        }
+
+        .apropos-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            gap: 50px;
+        }
+
+        .apropos-text {
+            width: 50%;
+            text-align: left;
+        }
+
+        .apropos-text h2 {
+            color: #20C997;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .apropos-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .apropos-text .web {
+            color: #20C997;
+            font-weight: bold;
+        }
+
+        .apropos-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .apropos-text button {
+            background-color: #20C997;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        .apropos-text button a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .apropos-text button:hover {
+            background-color: #17A589;
+        }
+
+        .apropos-image {
+            width: 40%;
+            text-align: center;
+        }
+
+        .apropos-image img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+            border: 5px solid #20C997;
+        }
+
+        #projets {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #projets h2 {
+            color: #20C997;
+            margin-bottom: 50px;
+            font-size: 2rem;
+        }
+
+        .projets-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .projet-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .projet-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .projet-card h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .projet-card p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .projet-card .hashtags {
+            color: #20C997;
+            margin-bottom: 20px;
+            display: block;
+            font-weight: bold;
+        }
+
+        .projet-card button {
+            background-color: #20C997;
+            color: #fff;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .projet-card button:hover {
+            background-color: #17A589;
+        }
+
+        #competences {
+            background-color: #f0f0f0;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #competences h2 {
+            color: #000; /* Noir comme demandé */
+            margin-bottom: 50px;
+            font-size: 2rem;
+        }
+
+        .competences-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skills-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            width: 45%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .skills-card h3 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .skill {
+            margin-bottom: 20px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: #20C997;
+            border-radius: 5px;
+        }
+
+        .soft .skill-progress {
+            width: 80%;
+        }
+
+        .soft .skill:nth-child(2) .skill-progress {
+            width: 90%;
+        }
+
+        .soft .skill:nth-child(3) .skill-progress {
+            width: 85%;
+        }
+
+        .hard .skill-progress {
+            width: 85%;
+        }
+
+        .hard .skill:nth-child(2) .skill-progress {
+            width: 80%;
+        }
+
+        .hard .skill:nth-child(3) .skill-progress {
+            width: 50%; /* JavaScript à 50% comme demandé */
+        }
+
+        .hard .skill:nth-child(4) .skill-progress {
+            width: 75%;
+        }
+
+        #contact {
+            background-color: #0D0D0D;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #contact h2 span {
+            color: #20C997;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            color: #333;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 30px; /* Plus d'espace entre les champs comme demandé */
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .form-container textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .form-container button {
+            background-color: #20C997;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 16px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto; /* Bouton centré comme demandé */
+        }
+
+        .form-container button:hover {
+            background-color: #17A589;
+        }
+
+        footer {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+        }
+
+        footer .prenom {
+            color: #20C997;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><span class="nom">AZIZI</span> <span class="prenom">Michaëlla</span></div>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil">
+        <div class="accueil-content">
+            <div class="accueil-text">
+                <h1>Je suis <span class="prenom">Michaëlla</span>,<br>Développeuse en devenir</h1>
+                <span class="subtitle">Passionnée par le web et le design !</span>
+                <button onclick="location.href='#projets'">Voir mes projets</button>
+            </div>
+            <div class="image-header">
+                <img src="images/header-image.jpg" alt="Illustration développeurs">
+            </div>
+        </div>
+    </section>
+
+    <section id="apropos">
+        <div class="apropos-content">
+            <div class="apropos-text">
+                <h2>À propos</h2>
+                <h3>Je suis actuellement étudiante en <span class="web">développement web</span>, et je cherche à améliorer mes compétences en JavaScript, HTML, CSS.</h3>
+                <p>J'adore transformer mes idées en projets concrets et expérimenter avec les nouvelles technologies.</p>
+                <button><a href="documents/CV_Michaella_AZIZI.pdf" download>Télécharger mon CV</a></button>
+            </div>
+            <div class="apropos-image">
+                <img src="images/michael.jpg" alt="Photo de Michaëlla">
+            </div>
+        </div>
+    </section>
+
+    <section id="projets">
+        <h2>Mes Projets</h2>
+        <div class="projets-container">
+            <div class="projet-card">
+                <h3>Projet 1</h3>
+                <p>Les projets arrivent bientôt</p>
+                <span class="hashtags">#html #css #js</span>
+                <button>Voir</button>
+            </div>
+            <div class="projet-card">
+                <h3>Projet 2</h3>
+                <p>Les projets arrivent bientôt</p>
+                <span class="hashtags">#html #css #js</span>
+                <button>Voir</button>
+            </div>
+            <div class="projet-card">
+                <h3>Projet 3</h3>
+                <p>Les projets arrivent bientôt</p>
+                <span class="hashtags">#html #css #js</span>
+                <button>Voir</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="competences">
+        <h2>Mes Compétences</h2>
+        <div class="competences-container">
+            <div class="skills-card soft">
+                <h3>Soft Skills</h3>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Gestion de projet</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Résolution de problème</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Adaptabilité</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-card hard">
+                <h3>Hard Skills</h3>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>HTML</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>CSS</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>JavaScript</span>
+                        <span>50%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>VS Code</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Vous avez un <span>projet en tête</span> ?</h2>
+        <p>N'hésitez pas à me <span class="prenom">contacter</span></p>
+        <div class="form-container">
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prenom">Votre prénom</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Ex: Jean">
+                    </div>
+                    <div class="form-group">
+                        <label for="nom">Votre nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Ex: Dupont">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sujet">Votre sujet</label>
+                    <input type="text" id="sujet" name="sujet" placeholder="Ex: Proposition de projet">
+                </div>
+                <div class="form-group">
+                    <label for="message">Votre message</label>
+                    <textarea id="message" name="message" placeholder="Ex: Bonjour, je souhaite discuter d'un projet web..."></textarea>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed by <span class="prenom">Michaëlla</span> with HTML, CSS, JS</p>
+        <p>© 2025 Tous droits réservés</p>
+    </footer>
+</body>
+</html>
